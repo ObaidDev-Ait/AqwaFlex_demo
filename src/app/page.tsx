@@ -33,7 +33,7 @@ export default function Home() {
               </Link>
               <a
                 href="https://wa.me/212000000"
-                className="glass-panel text-surface-bright px-10 py-5 rounded-full font-technical-sm tracking-widest uppercase hover:bg-white/20 transition-all flex items-center gap-3"
+                className="glass-panel text-surface-bright px-10 py-5 rounded-full font-technical-sm tracking-widest uppercase hover:bg-surface/20 transition-all flex items-center gap-3"
               >
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
                   chat
@@ -135,7 +135,7 @@ export default function Home() {
       </section>
 
       {/* Featured Products Grid */}
-      <section className="py-section-gap bg-surface-container-lowest" id="catalogue">
+      <section className="py-section-gap bg-surface" id="catalogue">
         <div className="px-margin-desktop max-w-container-max mx-auto">
           <div className="flex justify-between items-end mb-16">
             <div>
@@ -216,10 +216,10 @@ export default function Home() {
       {/* Final CTA Section */}
       <section className="py-section-gap px-margin-desktop" id="devis">
         <div className="max-w-container-max mx-auto bg-primary rounded-[40px] overflow-hidden relative">
-          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary-fixed via-transparent to-transparent"></div>
+          <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/50 via-transparent to-transparent"></div>
           <div className="relative z-10 px-10 py-24 text-center">
             <h2 className="font-headline-xl text-headline-xl text-on-primary mb-6">
-              Prêt pour un sommeil d'exception ?
+              Prêt pour un sommeil d&apos;exception ?
             </h2>
             <p className="font-body-lg text-on-primary/80 max-w-2xl mx-auto mb-12">
               Recevez une proposition personnalisée pour votre projet de literie ou de salon sous 24h. Nos experts vous accompagnent dans votre choix.

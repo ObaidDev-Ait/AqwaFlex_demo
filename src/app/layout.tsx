@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
+import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -28,7 +29,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={`scroll-smooth ${montserrat.variable} ${playfair.variable}`}>
+    <html lang="fr" className={`scroll-smooth ${montserrat.variable} ${playfair.variable}`} suppressHydrationWarning>
       <head>
         <link
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
@@ -36,10 +37,12 @@ export default function RootLayout({
         />
       </head>
       <body className="bg-background text-on-surface font-body-md overflow-x-hidden antialiased pb-20 md:pb-0">
-        <Header />
-        <main>{children}</main>
-        <Footer />
-        <MobileNav />
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+          <Header />
+          <main>{children}</main>
+          <Footer />
+          <MobileNav />
+        </ThemeProvider>
       </body>
     </html>
   );
