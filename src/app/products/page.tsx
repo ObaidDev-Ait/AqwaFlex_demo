@@ -79,9 +79,26 @@ export default function Products() {
             </p>
           </div>
           
-          <div className="flex flex-col lg:flex-row gap-12">
-            {/* Filter Sidebar */}
-            <aside className="lg:w-1/4">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 relative">
+            
+            {/* Mobile Filter Chips (Horizontal Scroll) */}
+            <div className="lg:hidden flex overflow-x-auto gap-3 pb-3 pt-3 -mx-safe px-safe no-scrollbar sticky top-[64px] z-40 bg-background/90 backdrop-blur-[12px] border-b border-outline/10 mb-2">
+              <button className="flex-shrink-0 bg-primary text-on-primary px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center premium-shadow active:scale-[0.97] transition-transform">
+                Tout Voir
+              </button>
+              <button className="flex-shrink-0 bg-surface-variant text-on-surface-variant px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center border border-outline/10 active:scale-[0.97] transition-transform">
+                Matelas
+              </button>
+              <button className="flex-shrink-0 bg-surface-variant text-on-surface-variant px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center border border-outline/10 active:scale-[0.97] transition-transform">
+                Mousses
+              </button>
+              <button className="flex-shrink-0 bg-surface-variant text-on-surface-variant px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center border border-outline/10 active:scale-[0.97] transition-transform">
+                Salon Mousse
+              </button>
+            </div>
+
+            {/* Filter Sidebar (Desktop Only) */}
+            <aside className="hidden lg:block lg:w-1/4">
               <div className="bg-surface/60 backdrop-blur-[24px] border border-outline/20 rounded-2xl p-8 sticky top-32 shadow-[0_12px_24px_-8px_rgba(0,30,64,0.06)] dark:shadow-[0_12px_24px_-8px_rgba(0,0,0,0.5)]">
                 <h3 className="font-technical-sm text-sm tracking-[0.2em] uppercase text-primary mb-8 border-b border-primary/10 pb-4">
                   Filtrer par Univers

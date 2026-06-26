@@ -25,8 +25,8 @@ export default function ProductCard({ id, name, category, description, imageUrl,
   };
 
   return (
-    <Link href={`/products/${id}`} className="bg-card backdrop-blur-[16px] border border-outline/20 rounded-[24px] overflow-hidden group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_48px_-12px_rgba(0,30,64,0.18)] dark:hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)] hover:bg-surface-variant flex flex-col h-full relative">
-      <div className="relative h-[280px] w-full bg-surface-container overflow-hidden shrink-0">
+    <Link href={`/products/${id}`} className="bg-card backdrop-blur-[16px] border border-outline/20 rounded-[24px] overflow-hidden group transition-all duration-500 hover:-translate-y-3 hover:shadow-[0_24px_48px_-12px_rgba(0,30,64,0.18)] dark:hover:shadow-[0_24px_48px_-12px_rgba(0,0,0,0.5)] hover:bg-surface-variant active:scale-[0.98] flex flex-col h-full relative premium-shadow w-full">
+      <div className="relative aspect-video md:aspect-auto md:h-[280px] w-full bg-surface-container overflow-hidden shrink-0">
         {badge && (
           <span className={`absolute top-4 left-4 z-10 ${badgeClasses[badgeColor]} text-[10px] font-bold tracking-widest uppercase px-4 py-1.5 rounded-full shadow-sm`}>
             {badge}

@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import MobileNav from "@/components/layout/MobileNav";
+import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
 const montserrat = Montserrat({
@@ -42,6 +43,7 @@ export default function RootLayout({
           <main>{children}</main>
           <Footer />
           <MobileNav />
+          <FloatingWhatsApp />
         </ThemeProvider>
       </body>
     </html>

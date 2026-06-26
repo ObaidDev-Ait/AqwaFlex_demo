@@ -2,53 +2,43 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen, Info, MessageCircle } from "lucide-react";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
+import { Home, Grid, Info, Mail } from "lucide-react";
 
 export default function MobileNav() {
   const pathname = usePathname();
 
   const navItems = [
     { name: "Accueil", href: "/", icon: Home },
-    { name: "Catalogue", href: "/products", icon: BookOpen },
+    { name: "Catalogue", href: "/products", icon: Grid },
     { name: "À Propos", href: "/about", icon: Info },
-    { name: "WhatsApp", href: "#", icon: MessageCircle, isAction: true },
+    { name: "Devis", href: "/contact", icon: Mail },
   ];
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 w-full z-50 bg-surface/80 backdrop-blur-[24px] border-t border-outline/20 shadow-[0_-8px_32px_0_rgba(0,30,64,0.08)] dark:shadow-[0_-8px_32px_0_rgba(0,0,0,0.5)] pb-safe">
-      <div className="flex justify-around items-center h-[72px] px-2 relative">
+    <div className="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-[400px] z-50 rounded-full bg-surface/75 dark:bg-surface/60 backdrop-blur-lg border border-outline/10 shadow-[0_12px_40px_-12px_rgba(0,0,0,0.3)] dark:shadow-[0_12px_40px_-12px_rgba(0,0,0,0.7)] px-6 py-2">
+      <div className="flex justify-between items-center h-[56px] relative">
         {navItems.map((item) => {
           const Icon = item.icon;
-          const isActive = pathname === item.href && !item.isAction;
+          const isActive = pathname === item.href;
 
           return (
             <Link
               key={item.name}
               href={item.href}
-              className={`flex flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-300 ${
+              className={`relative flex flex-col items-center justify-center min-w-[50px] h-[50px] rounded-full transition-all duration-300 active:scale-90 ${
                 isActive 
-                  ? "text-primary" 
-                  : item.isAction 
-                    ? "text-secondary hover:-translate-y-1" 
-                    : "text-on-surface-variant hover:text-primary"
+                  ? "text-primary dark:text-accent scale-110" 
+                  : "text-on-surface-variant/70 dark:text-on-surface-variant/60 hover:text-primary dark:hover:text-accent"
               }`}
             >
-              <div className={`relative flex items-center justify-center ${isActive ? 'bg-primary/5 rounded-full p-1.5' : 'p-1.5'}`}>
-                 <Icon size={24} strokeWidth={isActive ? 2.5 : 2} />
-              </div>
-              <span className={`text-[10px] font-technical-sm tracking-widest uppercase ${isActive ? "font-bold text-primary" : "font-medium"}`}>
-                {item.name}
-              </span>
+              <Icon size={24} strokeWidth={isActive ? 2.5 : 2} className="transition-transform duration-300" />
+              {/* Active indicator dot */}
+              {isActive && (
+                <span className="absolute bottom-1.5 w-1 h-1 rounded-full bg-primary dark:bg-accent animate-pulse" />
+              )}
             </Link>
           );
         })}
-        <div className="flex flex-col items-center justify-center w-full h-full space-y-1 transition-all duration-300">
-           <ThemeToggle />
-           <span className="text-[10px] font-technical-sm tracking-widest uppercase font-medium text-on-surface-variant mt-1">
-             THÈME
-           </span>
-        </div>
       </div>
     </div>
   );

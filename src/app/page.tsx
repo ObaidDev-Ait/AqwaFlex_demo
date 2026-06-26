@@ -3,9 +3,9 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
+    <div className="flex flex-col">
       {/* Hero Section */}
-      <section className="relative h-screen w-full flex items-center overflow-hidden">
+      <section className="relative h-[65svh] md:h-screen w-full flex items-center overflow-hidden order-1">
         <div className="absolute inset-0 z-0">
           <div
             className="w-full h-full bg-cover bg-center transition-transform duration-10000 hover:scale-110"
@@ -14,26 +14,27 @@ export default function Home() {
                 "url('https://lh3.googleusercontent.com/aida-public/AB6AXuB9XILNVpw7csjo06TUrYp5wse8m6t9bPhiffxIAEIMv2bJ2ZdZfP6D68y6prIgKx0Rhvg28QqapmOESLw7jOkUypBVCpEEuzlxT3wmVPIH7CiE4I7G499YqSInP_mG7vAS2p1xWA5R4k9TYk9XKHUW9nFyJyxF8qH0l6BgNzMpyg4QKeZwRMXfLRU3wT3r8UqwParxp6a1DnyBrZrnRZFu5Jt7SYWqm_7165WpRWMaioqQtYGasxmd5uMUIQAZAFSo08kAtbQIyD15')",
             }}
           ></div>
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/40 to-transparent"></div>
+          {/* Darker gradient on mobile for better text contrast */}
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/50 md:bg-gradient-to-r md:from-primary/40 to-transparent"></div>
         </div>
-        <div className="relative z-10 px-margin-desktop max-w-container-max mx-auto w-full">
-          <div className="max-w-3xl mt-12 md:mt-0">
-            <h1 className="font-display-lg text-5xl md:text-7xl lg:text-8xl text-surface-bright mb-8 leading-tight md:leading-snug tracking-tight max-w-[90%] md:max-w-full">
-              AQUAFLEX — Le Confort <span className="block italic font-light mt-2">Nouvelle Génération</span>
+        <div className="relative z-10 px-safe md:px-margin-desktop max-w-[1440px] mx-auto w-full">
+          <div className="max-w-3xl mt-12 md:mt-0 flex flex-col items-center md:items-start text-center md:text-left animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <h1 className="font-display-lg text-4xl sm:text-5xl md:text-7xl lg:text-8xl text-surface-bright mb-4 md:mb-8 leading-tight md:leading-snug tracking-tight max-w-[95%] md:max-w-full text-balance line-clamp-3">
+              AQUAFLEX — Le Confort <span className="block italic font-light mt-1 md:mt-2">Nouvelle Génération</span>
             </h1>
-            <p className="font-body-lg text-lg md:text-xl text-surface-bright/90 mb-12 max-w-xl leading-relaxed">
+            <p className="font-body-lg text-base md:text-xl text-surface-bright/90 mb-8 md:mb-12 max-w-xl leading-relaxed px-2 md:px-0">
               Fabricant marocain de matelas, mousses, salons mousse et solutions de confort haut de gamme pour une expérience de sommeil inégalée.
             </p>
-            <div className="flex flex-wrap gap-6">
+            <div className="flex flex-col md:flex-row flex-wrap gap-4 md:gap-6 w-full items-center md:items-start justify-center md:justify-start">
               <Link
                 href="#catalogue"
-                className="bg-surface-bright text-primary px-10 py-5 rounded-full font-technical-sm tracking-widest uppercase shadow-xl hover:bg-secondary-container transition-all"
+                className="bg-surface-bright text-primary w-[85%] md:w-auto h-14 flex items-center justify-center px-10 rounded-full font-technical-sm tracking-widest uppercase shadow-xl hover:bg-secondary-container transition-all"
               >
                 Voir le catalogue
               </Link>
               <a
-                href="https://wa.me/212000000"
-                className="glass-panel text-surface-bright px-10 py-5 rounded-full font-technical-sm tracking-widest uppercase hover:bg-surface/20 transition-all flex items-center gap-3"
+                href="https://wa.me/212661361250"
+                className="hidden md:flex glass-panel text-surface-bright w-[85%] md:w-auto h-14 items-center justify-center px-10 rounded-full font-technical-sm tracking-widest uppercase hover:bg-surface/20 transition-all gap-3"
               >
                 <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
                   chat
@@ -46,7 +47,7 @@ export default function Home() {
       </section>
 
       {/* Features Section: Glassmorphism */}
-      <section className="py-section-gap px-margin-desktop max-w-container-max mx-auto relative">
+      <section className="py-section-gap px-margin-desktop max-w-[1440px] mx-auto relative order-4 md:order-2">
         <div className="text-center mb-20">
           <span className="font-technical-sm text-technical-sm tracking-widest uppercase text-on-tertiary-container mb-4 block">
             Excellence &amp; Tradition
@@ -85,9 +86,9 @@ export default function Home() {
       </section>
 
       {/* Categories Section: Asymmetric Image Blocks */}
-      <section className="pb-section-gap">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-container-max mx-auto h-[700px]">
-          <Link href="/products" className="md:col-span-7 relative group overflow-hidden rounded-[24px] cursor-pointer block">
+      <section className="pb-section-gap order-3">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-[1440px] mx-auto h-auto md:h-[700px] gap-y-6">
+          <Link href="/products" className="min-h-[250px] md:col-span-7 relative group overflow-hidden rounded-[24px] cursor-pointer block">
             <div
               className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
               style={{
@@ -96,13 +97,13 @@ export default function Home() {
               }}
             ></div>
             <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-            <div className="absolute bottom-10 left-10 text-surface-bright">
+            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-surface-bright">
               <h2 className="font-headline-xl text-headline-xl mb-2">MATELAS</h2>
               <p className="font-technical-sm tracking-widest uppercase opacity-80">Collection Sommeil Profond</p>
             </div>
           </Link>
-          <div className="md:col-span-5 flex flex-col gap-gutter">
-            <Link href="/products" className="flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
+          <div className="md:col-span-5 flex flex-col gap-gutter gap-y-6">
+            <Link href="/products" className="min-h-[180px] md:flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{
@@ -111,12 +112,12 @@ export default function Home() {
                 }}
               ></div>
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-              <div className="absolute bottom-8 left-8 text-surface-bright">
+              <div className="absolute bottom-6 left-6 text-surface-bright">
                 <h2 className="font-headline-lg text-headline-lg mb-1">MOUSSES</h2>
                 <p className="font-technical-sm tracking-widest uppercase opacity-80">Technologie &amp; Densité</p>
               </div>
             </Link>
-            <Link href="/products" className="flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
+            <Link href="/products" className="min-h-[180px] md:flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
               <div
                 className="absolute inset-0 bg-cover bg-center transition-transform duration-700 group-hover:scale-105"
                 style={{
@@ -125,7 +126,7 @@ export default function Home() {
                 }}
               ></div>
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors"></div>
-              <div className="absolute bottom-8 left-8 text-surface-bright">
+              <div className="absolute bottom-6 left-6 text-surface-bright">
                 <h2 className="font-headline-lg text-headline-lg mb-1">SALON MOUSSE</h2>
                 <p className="font-technical-sm tracking-widest uppercase opacity-80">Design Sur Mesure</p>
               </div>
@@ -135,8 +136,8 @@ export default function Home() {
       </section>
 
       {/* Featured Products Grid */}
-      <section className="py-section-gap bg-surface" id="catalogue">
-        <div className="px-margin-desktop max-w-container-max mx-auto">
+      <section className="py-section-gap bg-surface order-2 md:order-4" id="catalogue">
+        <div className="px-margin-desktop max-w-[1440px] mx-auto">
           <div className="flex justify-between items-end mb-16">
             <div>
               <span className="font-technical-sm text-technical-sm tracking-widest uppercase text-on-tertiary-container mb-4 block">
@@ -148,7 +149,7 @@ export default function Home() {
               TOUT VOIR
             </Link>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-y-12">
             {/* Product Card 1 */}
             <div className="group">
               <div className="aspect-[4/5] bg-surface-container relative rounded-[24px] overflow-hidden mb-8 premium-shadow">
@@ -214,8 +215,8 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-section-gap px-margin-desktop" id="devis">
-        <div className="max-w-container-max mx-auto bg-primary rounded-[40px] overflow-hidden relative">
+      <section className="py-section-gap px-margin-desktop order-5" id="devis">
+        <div className="max-w-[1440px] mx-auto bg-primary rounded-[40px] overflow-hidden relative">
           <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-secondary/50 via-transparent to-transparent"></div>
           <div className="relative z-10 px-10 py-24 text-center">
             <h2 className="font-headline-xl text-headline-xl text-on-primary mb-6">
@@ -229,16 +230,16 @@ export default function Home() {
                 Demander mon devis
               </Link>
               <a
-                href="tel:+21200000000"
+                href="tel:+212522765353"
                 className="border border-on-primary/30 text-on-primary px-12 py-5 rounded-full font-headline-lg text-lg hover:bg-on-primary/10 transition-all flex items-center justify-center gap-3"
               >
                 <span className="material-symbols-outlined">call</span>
-                05 22 XX XX XX
+                05 22 76 53 53
               </a>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

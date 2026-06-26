@@ -26,7 +26,7 @@
 
   /* Spacing */
   --spacing-container-max: 1440px;
-  --spacing-margin-mobile: 24px;
+  --spacing-margin-mobile: 20px;
   --spacing-section-gap: 120px;
   --spacing-unit: 8px;
   --spacing-gutter: 32px;
@@ -199,6 +199,23 @@
     background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top);
+  }
+  .px-safe {
+    padding-left: max(var(--spacing-margin-mobile), env(safe-area-inset-left));
+    padding-right: max(var(--spacing-margin-mobile), env(safe-area-inset-right));
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
   }
 }
 

@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ThemeToggle } from '@/components/theme/ThemeToggle';
+import MobileMenu from './MobileMenu';
 
 export default function Header() {
   return (
@@ -47,7 +48,7 @@ export default function Header() {
             <Link href="/contact" className="hidden sm:block bg-primary text-on-primary px-6 lg:px-8 py-2 lg:py-3 rounded-full font-technical-sm tracking-widest uppercase hover:scale-105 transition-transform duration-500 whitespace-nowrap text-xs">
               DEVIS
             </Link>
-            <button className="md:hidden material-symbols-outlined text-primary text-3xl">menu</button>
+            <MobileMenu />
           </div>
         </nav>
       </div>
