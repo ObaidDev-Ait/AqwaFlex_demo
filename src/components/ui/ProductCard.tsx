@@ -33,7 +33,13 @@ export default function ProductCard({ id, name, category, description, imageUrl,
           </span>
         )}
         {imageUrl ? (
-          <img src={imageUrl} alt={name} className="object-cover w-full h-full transition-transform duration-1000 group-hover:scale-110" />
+          <Image
+            src={imageUrl}
+            alt={name}
+            fill
+            className="object-cover transition-transform duration-1000 group-hover:scale-110"
+            sizes="(max-width: 768px) 100vw, 33vw"
+          />
         ) : (
           <div className="w-full h-full flex items-center justify-center bg-surface-container text-on-surface-variant">
             <span>Image en attente</span>

@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 
 export default function ProductDetail() {
   const { slug } = useParams();
@@ -21,10 +22,13 @@ export default function ProductDetail() {
         {/* Left: Product Gallery */}
         <div className="lg:col-span-7 space-y-6">
           <div className="relative rounded-xl overflow-hidden group aspect-[4/3] bg-surface-container shadow-2xl">
-            <img
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+            <Image
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuC8NCpQp8OmV7oC8g2v-iMs-ZXJC2jjixz8J_HkEyeBOruPYFv0YaweMWgBoUJ6VN7R5J_xBJwyIbhDUfVkwlacpGy6Lx2btucfX_w9M58vGNj9wKBZTeL2T0jmPj6-mUYe56Q-SdQdSGBmGZcP7fAGz97oVa6zulUp9M_ikWvMAxaP0t9BEmXmXtAi47kn6fPw4ZoK-JR5te-gux6Db_T28ruuJ3hScNhRJnvl07hz3E6pb6o9RObQU_3Iah19Fjd11ENmU-8TBJaH"
               alt="Orthopédique Main"
+              fill
+              priority
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+              sizes="(max-width: 768px) 100vw, 58vw"
             />
             <div className="absolute top-6 left-6 flex flex-col gap-2">
               <span className="bg-primary text-on-primary px-4 py-1 rounded-full text-technical-sm tracking-widest uppercase">
@@ -36,25 +40,31 @@ export default function ProductDetail() {
             </div>
           </div>
           <div className="grid grid-cols-3 gap-4">
-            <div className="rounded-lg overflow-hidden h-32 bg-surface-container">
-              <img
-                className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            <div className="rounded-lg overflow-hidden h-32 bg-surface-container relative">
+              <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuB3tu8Kz_PMyEVUKS7S1r85zF6Gmf8lZrwk4iv6rmUeL9HR4DG_fRcCN1uRDWAa0LyH30rfSKMFxoQzXlgEQjoNZJDsmCEL5282hkV9XYV36v-xYj-D7mp11hCxroU0LRNU8JV3nFWrvv5fWAYljrOM7UqT-v07oj8IUXDZCoF3C1EmPilz10s-uuHdYEn35noSN6dWRQHBAVUoMyyyr8Hqa20QlmCx4H8NBTLUT-WIaUDKFxz7E3tH01b5a06V6RBzkoFu3lQLKxer"
                 alt="Detail 1"
+                fill
+                className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                sizes="(max-width: 768px) 33vw, 20vw"
               />
             </div>
-            <div className="rounded-lg overflow-hidden h-32 bg-surface-container">
-              <img
-                className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            <div className="rounded-lg overflow-hidden h-32 bg-surface-container relative">
+              <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuAp4oNvAvAMvf-XjPSdleOrgHtSm28Uq9Oul6KevThH_56OIzxiA9lg4apKiaIblEEMZYgjHByqIQjgl6w6dSpENQvO57DQxon4koSXJUNQxXeAxAK0M4sl08UMXrxdBpBTmzSTADDPOP8IV6RWlqvNnxQSKB50mp2JW0PMxCX54ahs6CDOQQM3qbQmPjqCfmSKXkXWho1tG3n8c-BN5bLKrtgDLqoLGml18DvczQfFxq0NdzuRYFcTOSIZ3CKHcp0N-7CY9jLauae1"
                 alt="Detail 2"
+                fill
+                className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                sizes="(max-width: 768px) 33vw, 20vw"
               />
             </div>
-            <div className="rounded-lg overflow-hidden h-32 bg-surface-container">
-              <img
-                className="w-full h-full object-cover cursor-pointer hover:opacity-80 transition-opacity"
+            <div className="rounded-lg overflow-hidden h-32 bg-surface-container relative">
+              <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuCpswCwzaWZJIdClKzXa9FMBdJrfT1VYRnjZlyHeOP5O4Yqh3LmLfQxHxOnSOGUSWdIWmKce9dhja-JQxTwaROe0zG7kcSk6jWxz_BMlrB958LTkVZcLwxftvS9yUrYMK-eA10f5R0kA4PupepxPfgDIHqeQU6QjXUwpI8wSQpdZaQGtbCzp15JGhaUIe3XFlbX8a78SJjZ_2t4t1RrqO4EctkJvqVyPf84QqVBm5Dpt7ytwXxgQ9_FZliXLU5_K0zqgw2csYQN5KIL"
                 alt="Detail 3"
+                fill
+                className="object-cover cursor-pointer hover:opacity-80 transition-opacity"
+                sizes="(max-width: 768px) 33vw, 20vw"
               />
             </div>
           </div>

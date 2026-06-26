@@ -47,7 +47,7 @@ export default function AboutPage() {
           <FadeIn direction="right" className="bg-slate-100 rounded-[40px] h-[600px] flex items-center justify-center overflow-hidden relative shadow-2xl">
             {/* Factory Image Placeholder */}
             <div className="absolute inset-0 bg-brand-blue">
-               <img src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=2070&auto=format&fit=crop" alt="Factory" className="object-cover w-full h-full opacity-60 mix-blend-luminosity" />
+                <Image src="https://images.unsplash.com/photo-1565688534245-05d6b5be184a?q=80&w=2070&auto=format&fit=crop" alt="Factory" fill className="object-cover opacity-60 mix-blend-luminosity" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           </FadeIn>
           <FadeIn direction="left">

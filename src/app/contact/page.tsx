@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Contact() {
   return (
     <>
@@ -76,10 +78,12 @@ export default function Contact() {
             {/* Map Placeholder */}
             <div className="rounded-[24px] overflow-hidden h-[350px] shadow-lg border border-white/20 relative group">
               <div className="absolute inset-0 bg-primary/10 z-10 pointer-events-none group-hover:bg-transparent transition-colors duration-500"></div>
-              <img
-                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              <Image
                 src="https://lh3.googleusercontent.com/aida-public/AB6AXuBj17x6_V7EnFrA1GcZcWpxghYId4B_L6yaXqJOjzbSYZwR7Vr4HnVJikUfq1xNzDCsOnFjnW6V_fomASW8y4-RNS_65eDcQ-RVbarZyQosNyA96m3Vr1KLXqYCPM7iuM93RSEJJxQGvgcAKD_ijpayRnygqAwOHkn43WnYk3__CfI9WhT10Txcj5oxj3DdDfieh5OG6SCNXmHJggL8jISfP3BhY8HKXEnWN6_BvFxAahbPzbcnqCfdtvE4e03rgvqGk0Q_RQ60_kC3"
                 alt="Map Casablanca"
+                fill
+                className="object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                sizes="(max-width: 768px) 100vw, 42vw"
               />
               <div className="absolute bottom-6 left-6 z-20 bg-white/60 backdrop-blur-[20px] border border-white/30 px-4 py-2 rounded-full flex items-center gap-2">
                 <span className="material-symbols-outlined text-primary text-sm">directions</span>
