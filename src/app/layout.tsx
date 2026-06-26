@@ -3,7 +3,6 @@ import { Montserrat, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import MobileNav from "@/components/layout/MobileNav";
 import FloatingWhatsApp from "@/components/ui/FloatingWhatsApp";
 import { ThemeProvider } from "@/components/theme/ThemeProvider";
 
@@ -37,12 +36,11 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-background text-on-surface font-body-md overflow-x-hidden antialiased pb-20 md:pb-0">
+      <body className="bg-background text-on-surface font-body-md overflow-x-hidden antialiased">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <Header />
           <main>{children}</main>
           <Footer />
-          <MobileNav />
           <FloatingWhatsApp />
         </ThemeProvider>
       </body>
