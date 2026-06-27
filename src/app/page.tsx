@@ -8,10 +8,11 @@ export default function Home() {
       <section className="relative h-[65svh] md:h-screen w-full flex items-center overflow-hidden order-1">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero-mattress.png"
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9XILNVpw7csjo06TUrYp5wse8m6t9bPhiffxIAEIMv2bJ2ZdZfP6D68y6prIgKx0Rhvg28QqapmOESLw7jOkUypBVCpEEuzlxT3wmVPIH7CiE4I7G499YqSInP_mG7vAS2p1xWA5R4k9TYk9XKHUW9nFyJyxF8qH0l6BgNzMpyg4QKeZwRMXfLRU3wT3r8UqwParxp6a1DnyBrZrnRZFu5Jt7SYWqm_7165WpRWMaioqQtYGasxmd5uMUIQAZAFSo08kAtbQIyD15"
             alt="Aquaflex Luxury Showroom Mattress"
             fill
             priority
+            quality={85}
             className="object-cover object-center transition-transform duration-10000 hover:scale-110"
             sizes="100vw"
           />
@@ -91,9 +92,11 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-[1440px] mx-auto h-auto md:h-[700px] gap-y-6">
           <Link href="/products" className="min-h-[250px] md:col-span-7 relative group overflow-hidden rounded-[24px] cursor-pointer block">
             <Image
-              src="/images/categories/matelas.jpg"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2v3XCmac9gn0TeSeO3kjPLRGSv_rZfsxr3hAT9w_nUWfOABME72xyDD2fmQ3yq-_WiCNVdLCenFcHIiVABtXENvg-39BUlTYKjJAmtj8Cul-QUuJopU5YlDnqz7XoV_cc07OjuMdgjXozVarPeZuCEXDkn1M9ekFX-3LDQtR259sT_B0f9Qg8zZFMHClN4RchoS5sAmA5IdGoGh_yOlBpDgH1a6SokY9I3toJrDLdlb83OKvEnc67PCERZz1yMdbd1n5vC4TyyadC"
               alt="Matelas Aquaflex"
               fill
+              loading="lazy"
+              quality={85}
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               sizes="(max-width: 768px) 100vw, 58vw"
             />
@@ -106,9 +109,11 @@ export default function Home() {
           <div className="md:col-span-5 flex flex-col gap-gutter gap-y-6">
             <Link href="/products" className="min-h-[180px] md:flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
               <Image
-                src="/images/categories/mousses.jpg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnebScj-mTUFFg5Vi-7CSteDovfedMP2BhUY_6ZLJJAtdCCOmaLGa8c1opXEjuzuSFflNrV9V2qvoKMU5jEraecvAxsWQW6CNa7kux1DXlrqrFxz5MRWMWhQhp8QZNKXuC20qYjpGYEK6OHwZX_43zOXCxxed5NeL1Ogk8JfQHZd3lYhZsfxeBhBVZ8BQ07cAW0NFhcXbUCkFGhJBpMuVnBo3dT1tr98-2EWwRKC_IWMFLaDv0UAO9ypLJJLw1fUD7XPf7oVkZFt97"
                 alt="Mousses Aquaflex"
                 fill
+                loading="lazy"
+                quality={85}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 42vw"
               />
@@ -120,9 +125,11 @@ export default function Home() {
             </Link>
             <Link href="/products" className="min-h-[180px] md:flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
               <Image
-                src="/images/categories/confort.jpg"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmUbklbXDqGjMw_IaTJwNTAX130eJQs88z7rlDFBV0QZNbMu7Wi6aSG5ZAiFUFK0ishTwkEkOArG9jduNh3mnJiyQzPoPmiNZEnv8WWU2-VAUgyDEXFrDfyn_c8hroxLvdfrqO4fqVb89WUeciMxlMMkY85jJz5oNBKLLXz-43xu_37481YIbNc1NrGpTJWCV1KXUmdAHSEufMsnLb_ZLGP5zRM4DXZtiRSzxCio7s7VDBj42SnSWXnsV5KWH6tTesDI1st1TaMA48"
                 alt="Salon Mousse Aquaflex"
                 fill
+                loading="lazy"
+                quality={85}
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 768px) 100vw, 42vw"
               />
@@ -158,6 +165,8 @@ export default function Home() {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqkCHNSgTm1MW7KipvGG32E0OX3KLlLz6rMwO3EvZ2i5w3CIOMEa9cSUMXpWp8tANaUyc1t9TnmPJhtoQ0Z5iKYoIolC3PhMNr9_Mlml6qG9SlvM5Uw9TsDFT6w4abX-mmPpO1fWr4yqB4h4uDFE3Zq-Y3b0bbm74ncTChTxg8BRpRPwnyd5RGjhOvUfMQKCLcfDZ5Qg_ytKKltcILytU4yVqbeRZ0XZvq0N3t8Z_5GoLdvd8mLfBIilCAaODAzh9KKDWGuSIFO5UI"
                   alt="Relax"
                   fill
+                  loading="lazy"
+                  quality={85}
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
@@ -180,6 +189,8 @@ export default function Home() {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ik6nym5Oow6wntBCPFtMb6xIS8gLTgLLBgBnA8omKV14_RfAPa0DLFRil0xYCo87gVWeod59HaiwoAxvXsuWR2JP-VI6ml3AtaQUEQYN0umvbzrvNLDOL7PM-sgLXkrbyzvrkTIlN7ELNpEUBp7HxDIZAOjComSPUgI4DAcOq0my57S7LqzjneOBdrLuat9XRbi-1MStM4Bb0ywZTVwnbkhlgt-KtsRYlueIc0wAeqZKGkY6ZuI2HKhyUMlqfnXsrpoC2R_z9kMj"
                   alt="Prestige"
                   fill
+                  loading="lazy"
+                  quality={85}
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
@@ -202,6 +213,8 @@ export default function Home() {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxOmg6x2YJ4QmZMgux72oogTay8WkTWXduyV0RujGK0p57G4Y5PD_1OR8nOMDwvJXISZx8IOeBYqMGsyINS5BwX3FIuuiRCqwUr_aVDbOLh8GvwvCW9m43DZOQMd-GT-epUpRnNALNWne4FhoCqa92CESSPCXUXQvxSfr76jKXMAoSCloIPtyQMvsWBISHuCuKqLnqHrBYOBmkjkZXdb0sZSQ9ZB9e6_zDXxfnMSOMYGbOlY--xb3s9BhVrvZxQm-J2BUEhidRxLNC"
                   alt="Orthopédique"
                   fill
+                  loading="lazy"
+                  quality={85}
                   className="object-cover transition-transform duration-700 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 33vw"
                 />
