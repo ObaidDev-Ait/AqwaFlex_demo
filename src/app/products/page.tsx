@@ -4,7 +4,7 @@ import ProductCard from "@/components/ui/ProductCard";
 export default function Products() {
   const mattresses = [
     {
-      id: "relax",
+      id: "matelas-relax",
       name: "Relax",
       category: "Matelas",
       description: "L'équilibre parfait entre souplesse et maintien pour des nuits paisibles.",
@@ -14,7 +14,7 @@ export default function Products() {
       badgeColor: "primary" as const
     },
     {
-      id: "prestige",
+      id: "matelas-prestige",
       name: "Prestige",
       category: "Matelas",
       description: "Le fleuron de notre gamme, alliant technologie de pointe et finitions artisanales.",
@@ -24,7 +24,7 @@ export default function Products() {
       badgeColor: "secondary" as const
     },
     {
-      id: "ortho",
+      id: "matelas-orthopedique",
       name: "Orthopédique",
       category: "Matelas",
       description: "Conçu spécifiquement pour le soulagement des pressions dorsales.",
@@ -35,7 +35,7 @@ export default function Products() {
 
   const foams = [
     {
-      id: "windorsal",
+      id: "matelas-windorsal",
       name: "Windorsal 33",
       category: "Mousses",
       description: "Densité exceptionnelle pour une longévité garantie de 10 ans.",
@@ -46,7 +46,7 @@ export default function Products() {
       badgeColor: "accent" as const
     },
     {
-      id: "alpha",
+      id: "matelas-alpha",
       name: "Alpha 33",
       category: "Mousses",
       description: "Mousse résiliente offrant un accueil progressif et un soutien ferme.",
@@ -55,7 +55,7 @@ export default function Products() {
       imageUrl: "https://lh3.googleusercontent.com/aida-public/AB6AXuAIbpYjxXLiJ28ChQNb5cXpjHqIHR1EvgELHPC1bOZw6NhjL9TlzavpGLhJlAiwj0K8yn28MUc-TgGIjvsF5Sq0ZHxZCM-IDty-6hHw-iREL7qxloGo0a_mgMA-_l39bUnNvFHHSqA1NzY8stC9MidWNxD3ok4OCIjj3DbyhGeADkwpt-OgV1ChUX16iNmKIqRSU4tBzl7l-fElyionsyPomFWSdnR8jItWvGqQ9THDsK-R08bv6P9J-DTVx2Zayn6IeRnkuGaw3yUe"
     },
     {
-      id: "silver",
+      id: "matelas-silver",
       name: "Silver 20",
       category: "Mousses",
       description: "Légèreté et flexibilité pour vos projets d'ameublement sur mesure.",

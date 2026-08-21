@@ -335,3 +335,7 @@ export const products: Product[] = [
     price: "6 500 MAD"
   }
 ];
+
+export function getProductBySlug(slug: string): Product | undefined {
+  return products.find((product) => product.slug === slug);
+}
