@@ -75,7 +75,7 @@ export default function Products() {
               Catalogue 2026
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto md:mx-0 leading-relaxed">
-              L'ingénierie du sommeil au service de votre bien-être. Découvrez notre nouvelle gamme de mousses haute densité et matelas ergonomiques avec des finitions dignes de l'hôtellerie de luxe.
+              L&apos;ingénierie du sommeil au service de votre bien-être. Découvrez notre nouvelle gamme de mousses haute densité et matelas ergonomiques avec des finitions dignes de l&apos;hôtellerie de luxe.
             </p>
           </div>
           

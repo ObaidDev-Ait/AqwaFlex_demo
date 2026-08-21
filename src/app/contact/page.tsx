@@ -8,7 +8,7 @@ export default function Contact() {
         <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="max-w-3xl">
             <h1 className="font-headline-xl text-headline-xl text-primary mb-6">
-              Contactez l'Excellence du Sommeil
+              Contactez l&apos;Excellence du Sommeil
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
               Experts en confort nouvelle génération, nous sommes à votre disposition pour

@@ -76,7 +76,7 @@ export default function MobileMenu() {
           </div>
 
           <div className="mb-10">
-            <h3 className="text-[11px] font-technical-sm tracking-[0.2em] uppercase text-on-surface-variant mb-6">L'Entreprise</h3>
+            <h3 className="text-[11px] font-technical-sm tracking-[0.2em] uppercase text-on-surface-variant mb-6">L&apos;Entreprise</h3>
             <ul className="space-y-5">
               <li><Link href="/about" className="text-2xl font-display-lg text-primary hover:text-secondary transition-colors">Notre histoire</Link></li>
               <li><Link href="/about" className="text-2xl font-display-lg text-primary hover:text-secondary transition-colors">Notre savoir-faire</Link></li>
