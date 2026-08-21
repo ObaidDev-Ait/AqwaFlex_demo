@@ -11,8 +11,7 @@ export default function MobileMenu() {
 
   // Close menu when route changes
   useEffect(() => {
-    const timeout = window.setTimeout(() => setIsOpen(false), 0);
-    return () => window.clearTimeout(timeout);
+    setIsOpen(false);
   }, [pathname]);
 
   // Prevent background scrolling when open
