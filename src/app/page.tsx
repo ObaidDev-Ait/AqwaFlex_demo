@@ -178,7 +178,7 @@ export default function Home() {
               <p className="text-on-surface-variant font-body-md mb-6">
                 Mousse haute résilience pour un accueil enveloppant et un soutien équilibré.
               </p>
-              <Link href="/products/relax" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
+              <Link href="/products/matelas-relax" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
                 Découvrir
               </Link>
             </div>
@@ -202,7 +202,7 @@ export default function Home() {
               <p className="text-on-surface-variant font-body-md mb-6">
                 Technologie hybride combinant ressorts ensachés et mousse à mémoire de forme.
               </p>
-              <Link href="/products/prestige" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
+              <Link href="/products/matelas-prestige" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
                 Découvrir
               </Link>
             </div>
@@ -226,7 +226,7 @@ export default function Home() {
               <p className="text-on-surface-variant font-body-md mb-6">
                 Fermeté optimale pour un alignement parfait de la colonne vertébrale.
               </p>
-              <Link href="/products/ortho" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
+              <Link href="/products/matelas-orthopedique" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
                 Découvrir
               </Link>
             </div>
