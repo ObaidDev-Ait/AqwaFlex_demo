@@ -13,7 +13,7 @@ export default function Footer() {
             />
           </Link>
           <p className="font-body-md mb-8 max-w-sm leading-relaxed text-[var(--footer-text)]/80">
-            L'excellence marocaine dans la fabrication de solutions de confort haut de gamme. Matelas, mousses et salons sur mesure.
+            L&apos;excellence marocaine dans la fabrication de solutions de confort haut de gamme. Matelas, mousses et salons sur mesure.
           </p>
           <div className="flex gap-4">
             <a href="#" className="w-12 h-12 rounded-full border border-[var(--footer-text)]/20 flex items-center justify-center hover:bg-[var(--footer-text)]/10 hover:border-[var(--footer-text)]/40 transition-all duration-300">
@@ -36,7 +36,7 @@ export default function Footer() {
         </div>
 
         <div className="md:col-span-2">
-          <h4 className="font-technical-sm tracking-widest uppercase mb-6 font-semibold">L'Entreprise</h4>
+          <h4 className="font-technical-sm tracking-widest uppercase mb-6 font-semibold">L&apos;Entreprise</h4>
           <ul className="flex flex-col gap-4 font-body-md text-[var(--footer-text)]/70">
             <li><Link href="/about" className="transition-colors duration-300 hover:text-secondary">Notre Histoire</Link></li>
             <li><Link href="/about" className="transition-colors duration-300 hover:text-secondary">Savoir-Faire</Link></li>
