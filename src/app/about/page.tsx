@@ -1,8 +1,46 @@
 "use client";
 
-import { Building2, Users, Target, Shield, CheckCircle2, Factory } from "lucide-react";
+import { Users, Target, Shield, CheckCircle2, Factory } from "lucide-react";
 import FadeIn from "@/components/ui/FadeIn";
+import ValueCard from "@/components/ui/ValueCard";
 import Image from "next/image";
+
+const MANUFACTURING_STEPS = [
+  { title: "Raw Material Selection", desc: "We source only the highest grade European polyols and isocyanates." },
+  { title: "Foam Pouring & Curing", desc: "Our automated Maxfoam machines ensure perfectly consistent density across every block." },
+  { title: "Precision Cutting", desc: "CNC contour cutting technology creates ergonomic zones and exact dimensions." },
+  { title: "Assembly & Quilting", desc: "Master craftsmen assemble the layers and stitch our premium Tencel covers." },
+  { title: "Quality Control", desc: "Every mattress undergoes rigorous pressure and durability testing before dispatch." },
+];
+
+const PRODUCTION_HIGHLIGHTS = [
+  "100% Integrated Production Cycle",
+  "Zero-Waste Foam Recycling Initiative",
+  "Automated Quality Tracking System",
+];
+
+const VALUES = [
+  {
+    icon: Factory,
+    title: "Infrastructure",
+    description: "Over 20,000 sqm of modern manufacturing space equipped with cutting-edge machinery.",
+  },
+  {
+    icon: Shield,
+    title: "Quality First",
+    description: "ISO 9001 certified processes and premium raw materials guarantee excellence.",
+  },
+  {
+    icon: Users,
+    title: "Expertise",
+    description: "A dedicated team of highly skilled engineers, craftsmen, and sleep specialists.",
+  },
+  {
+    icon: Target,
+    title: "Innovation",
+    description: "Continuous research and development pushing the boundaries of foam technology.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -22,13 +60,7 @@ export default function AboutPage() {
               <h2 className="text-3xl md:text-4xl font-heading font-bold text-brand-blue">The Manufacturing Journey</h2>
            </FadeIn>
            <div className="relative border-l-2 border-brand-cyan-light ml-4 md:ml-0 md:pl-0 md:flex flex-col items-center">
-              {[
-                { title: "Raw Material Selection", desc: "We source only the highest grade European polyols and isocyanates." },
-                { title: "Foam Pouring & Curing", desc: "Our automated Maxfoam machines ensure perfectly consistent density across every block." },
-                { title: "Precision Cutting", desc: "CNC contour cutting technology creates ergonomic zones and exact dimensions." },
-                { title: "Assembly & Quilting", desc: "Master craftsmen assemble the layers and stitch our premium Tencel covers." },
-                { title: "Quality Control", desc: "Every mattress undergoes rigorous pressure and durability testing before dispatch." }
-              ].map((step, idx) => (
+              {MANUFACTURING_STEPS.map((step, idx) => (
                  <FadeIn key={idx} delay={idx * 0.15} direction="up" className="mb-12 relative w-full md:w-1/2 md:odd:pr-12 md:even:pl-12 md:odd:ml-auto md:even:mr-auto">
                     <div className="absolute top-0 -left-[25px] md:left-auto md:right-[-25px] md:even:left-[-25px] md:even:right-auto w-12 h-12 bg-white border-4 border-brand-cyan rounded-full flex items-center justify-center font-bold text-brand-blue z-10">
                        {idx + 1}
@@ -59,52 +91,20 @@ export default function AboutPage() {
               From traditional Moroccan salon foam to medical-grade orthopedic mattresses, our diverse product range is designed to meet the highest standards of comfort and durability.
             </p>
             <ul className="space-y-4 mb-8">
-               <li className="flex items-center gap-3 text-slate-700 font-medium">
-                  <CheckCircle2 className="text-brand-cyan" /> 100% Integrated Production Cycle
-               </li>
-               <li className="flex items-center gap-3 text-slate-700 font-medium">
-                  <CheckCircle2 className="text-brand-cyan" /> Zero-Waste Foam Recycling Initiative
-               </li>
-               <li className="flex items-center gap-3 text-slate-700 font-medium">
-                  <CheckCircle2 className="text-brand-cyan" /> Automated Quality Tracking System
-               </li>
+               {PRODUCTION_HIGHLIGHTS.map((highlight) => (
+                 <li key={highlight} className="flex items-center gap-3 text-slate-700 font-medium">
+                    <CheckCircle2 className="text-brand-cyan" /> {highlight}
+                 </li>
+               ))}
             </ul>
           </FadeIn>
         </div>
 
         {/* Values */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <FadeIn delay={0.1} className="glass p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-blue text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
-              <Factory size={36} />
-            </div>
-            <h3 className="font-heading font-bold text-brand-blue text-2xl mb-4">Infrastructure</h3>
-            <p className="text-slate-600">Over 20,000 sqm of modern manufacturing space equipped with cutting-edge machinery.</p>
-          </FadeIn>
-          
-          <FadeIn delay={0.2} className="glass p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-blue text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
-              <Shield size={36} />
-            </div>
-            <h3 className="font-heading font-bold text-brand-blue text-2xl mb-4">Quality First</h3>
-            <p className="text-slate-600">ISO 9001 certified processes and premium raw materials guarantee excellence.</p>
-          </FadeIn>
-          
-          <FadeIn delay={0.3} className="glass p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-blue text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
-              <Users size={36} />
-            </div>
-            <h3 className="font-heading font-bold text-brand-blue text-2xl mb-4">Expertise</h3>
-            <p className="text-slate-600">A dedicated team of highly skilled engineers, craftsmen, and sleep specialists.</p>
-          </FadeIn>
-
-          <FadeIn delay={0.4} className="glass p-10 rounded-3xl text-center hover:-translate-y-2 transition-transform duration-300">
-            <div className="w-20 h-20 bg-gradient-to-br from-brand-cyan to-brand-blue text-white rounded-3xl flex items-center justify-center mx-auto mb-8 shadow-xl">
-              <Target size={36} />
-            </div>
-            <h3 className="font-heading font-bold text-brand-blue text-2xl mb-4">Innovation</h3>
-            <p className="text-slate-600">Continuous research and development pushing the boundaries of foam technology.</p>
-          </FadeIn>
+          {VALUES.map((value, idx) => (
+            <ValueCard key={value.title} delay={(idx + 1) * 0.1} {...value} />
+          ))}
         </div>
       </div>
     </div>

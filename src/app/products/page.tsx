@@ -1,5 +1,58 @@
-import Link from "next/link";
+import MaterialIcon from "@/components/ui/MaterialIcon";
 import ProductCard from "@/components/ui/ProductCard";
+import { PRODUCT_FILTERS } from "@/lib/navigation";
+
+const FIRMNESS_FILTERS = [
+  { label: "Moelleux", selected: false },
+  { label: "Équilibré", selected: true },
+  { label: "Ferme", selected: false },
+];
+
+function FilterChip({ label, active }: { label: string; active: boolean }) {
+  return (
+    <button
+      className={`flex-shrink-0 px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center active:scale-[0.97] transition-transform ${
+        active
+          ? "bg-primary text-on-primary premium-shadow"
+          : "bg-surface-variant text-on-surface-variant border border-outline/10"
+      }`}
+    >
+      {label}
+    </button>
+  );
+}
+
+function FilterRow({ label, active }: { label: string; active: boolean }) {
+  if (active) {
+    return (
+      <button className="w-full flex justify-between items-center p-4 rounded-xl bg-gradient-premium text-on-primary transition-all shadow-md hover-lift">
+        <span className="font-label-md text-sm font-semibold uppercase tracking-wider">{label}</span>
+        <MaterialIcon name="chevron_right" className="text-lg" />
+      </button>
+    );
+  }
+
+  return (
+    <button className="w-full flex justify-between items-center p-4 rounded-xl hover:bg-surface-variant transition-all text-on-surface-variant group">
+      <span className="font-label-md text-sm font-medium uppercase tracking-wider group-hover:text-primary transition-colors">
+        {label}
+      </span>
+      <MaterialIcon
+        name="chevron_right"
+        className="text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary"
+      />
+    </button>
+  );
+}
+
+function CatalogueSectionTitle({ title }: { title: string }) {
+  return (
+    <div className="flex items-center gap-8 mb-10">
+      <h2 className="font-headline-lg text-4xl text-primary font-bold">{title}</h2>
+      <div className="h-px flex-grow bg-gradient-to-r from-primary/20 to-transparent"></div>
+    </div>
+  );
+}
 
 export default function Products() {
   const mattresses = [
@@ -75,7 +128,7 @@ export default function Products() {
               Catalogue 2026
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant max-w-3xl mx-auto md:mx-0 leading-relaxed">
-              L'ingénierie du sommeil au service de votre bien-être. Découvrez notre nouvelle gamme de mousses haute densité et matelas ergonomiques avec des finitions dignes de l'hôtellerie de luxe.
+              L&apos;ingénierie du sommeil au service de votre bien-être. Découvrez notre nouvelle gamme de mousses haute densité et matelas ergonomiques avec des finitions dignes de l&apos;hôtellerie de luxe.
             </p>
           </div>
           
@@ -83,18 +136,9 @@ export default function Products() {
             
             {/* Mobile Filter Chips (Horizontal Scroll) */}
             <div className="lg:hidden flex overflow-x-auto gap-3 pb-3 pt-3 -mx-safe px-safe no-scrollbar sticky top-[64px] z-40 bg-background/90 backdrop-blur-[12px] border-b border-outline/10 mb-2">
-              <button className="flex-shrink-0 bg-primary text-on-primary px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center premium-shadow active:scale-[0.97] transition-transform">
-                Tout Voir
-              </button>
-              <button className="flex-shrink-0 bg-surface-variant text-on-surface-variant px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center border border-outline/10 active:scale-[0.97] transition-transform">
-                Matelas
-              </button>
-              <button className="flex-shrink-0 bg-surface-variant text-on-surface-variant px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center border border-outline/10 active:scale-[0.97] transition-transform">
-                Mousses
-              </button>
-              <button className="flex-shrink-0 bg-surface-variant text-on-surface-variant px-6 h-12 rounded-full font-technical-sm text-[11px] tracking-widest uppercase flex items-center justify-center border border-outline/10 active:scale-[0.97] transition-transform">
-                Salon Mousse
-              </button>
+              {PRODUCT_FILTERS.map((filter, idx) => (
+                <FilterChip key={filter} label={filter} active={idx === 0} />
+              ))}
             </div>
 
             {/* Filter Sidebar (Desktop Only) */}
@@ -104,28 +148,9 @@ export default function Products() {
                   Filtrer par Univers
                 </h3>
                 <div className="space-y-3">
-                  <button className="w-full flex justify-between items-center p-4 rounded-xl bg-gradient-premium text-on-primary transition-all shadow-md hover-lift">
-                    <span className="font-label-md text-sm font-semibold uppercase tracking-wider">TOUT VOIR</span>
-                    <span className="material-symbols-outlined text-lg">chevron_right</span>
-                  </button>
-                  <button className="w-full flex justify-between items-center p-4 rounded-xl hover:bg-surface-variant transition-all text-on-surface-variant group">
-                    <span className="font-label-md text-sm font-medium uppercase tracking-wider group-hover:text-primary transition-colors">MATELAS</span>
-                    <span className="material-symbols-outlined text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary">
-                      chevron_right
-                    </span>
-                  </button>
-                  <button className="w-full flex justify-between items-center p-4 rounded-xl hover:bg-surface-variant transition-all text-on-surface-variant group">
-                    <span className="font-label-md text-sm font-medium uppercase tracking-wider group-hover:text-primary transition-colors">MOUSSES</span>
-                    <span className="material-symbols-outlined text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary">
-                      chevron_right
-                    </span>
-                  </button>
-                  <button className="w-full flex justify-between items-center p-4 rounded-xl hover:bg-surface-variant transition-all text-on-surface-variant group">
-                    <span className="font-label-md text-sm font-medium uppercase tracking-wider group-hover:text-primary transition-colors">SALON MOUSSE</span>
-                    <span className="material-symbols-outlined text-lg opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all text-primary">
-                      chevron_right
-                    </span>
-                  </button>
+                  {PRODUCT_FILTERS.map((filter, idx) => (
+                    <FilterRow key={filter} label={filter} active={idx === 0} />
+                  ))}
                 </div>
                 
                 <div className="mt-14">
@@ -133,26 +158,26 @@ export default function Products() {
                     Fermeté
                   </h3>
                   <div className="space-y-4">
-                    <label className="flex items-center gap-4 cursor-pointer group">
-                      <div className="w-5 h-5 rounded border border-outline group-hover:border-primary flex items-center justify-center transition-colors"></div>
-                      <span className="font-body-md text-[15px] text-on-surface-variant group-hover:text-primary transition-colors">
-                        Moelleux
-                      </span>
-                    </label>
-                    <label className="flex items-center gap-4 cursor-pointer group">
-                      <div className="w-5 h-5 rounded border border-primary bg-primary flex items-center justify-center transition-colors">
-                        <span className="material-symbols-outlined text-on-primary text-[14px]">check</span>
-                      </div>
-                      <span className="font-body-md text-[15px] text-primary font-medium transition-colors">
-                        Équilibré
-                      </span>
-                    </label>
-                    <label className="flex items-center gap-4 cursor-pointer group">
-                      <div className="w-5 h-5 rounded border border-outline group-hover:border-primary flex items-center justify-center transition-colors"></div>
-                      <span className="font-body-md text-[15px] text-on-surface-variant group-hover:text-primary transition-colors">
-                        Ferme
-                      </span>
-                    </label>
+                    {FIRMNESS_FILTERS.map((option) => (
+                      <label key={option.label} className="flex items-center gap-4 cursor-pointer group">
+                        {option.selected ? (
+                          <div className="w-5 h-5 rounded border border-primary bg-primary flex items-center justify-center transition-colors">
+                            <MaterialIcon name="check" className="text-on-primary text-[14px]" />
+                          </div>
+                        ) : (
+                          <div className="w-5 h-5 rounded border border-outline group-hover:border-primary flex items-center justify-center transition-colors"></div>
+                        )}
+                        <span
+                          className={
+                            option.selected
+                              ? "font-body-md text-[15px] text-primary font-medium transition-colors"
+                              : "font-body-md text-[15px] text-on-surface-variant group-hover:text-primary transition-colors"
+                          }
+                        >
+                          {option.label}
+                        </span>
+                      </label>
+                    ))}
                   </div>
                 </div>
               </div>
@@ -160,11 +185,7 @@ export default function Products() {
             
             {/* Product Grid */}
             <div className="lg:w-3/4">
-              {/* Section Title: Matelas */}
-              <div className="flex items-center gap-8 mb-10">
-                <h2 className="font-headline-lg text-4xl text-primary font-bold">Matelas</h2>
-                <div className="h-px flex-grow bg-gradient-to-r from-primary/20 to-transparent"></div>
-              </div>
+              <CatalogueSectionTitle title="Matelas" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-24">
                 {mattresses.map(product => (
@@ -172,11 +193,7 @@ export default function Products() {
                 ))}
               </div>
 
-              {/* Section Title: Mousses */}
-              <div className="flex items-center gap-8 mb-10">
-                <h2 className="font-headline-lg text-4xl text-primary font-bold">Mousses Techniques</h2>
-                <div className="h-px flex-grow bg-gradient-to-r from-primary/20 to-transparent"></div>
-              </div>
+              <CatalogueSectionTitle title="Mousses Techniques" />
               
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-8">
                 {foams.map(product => (

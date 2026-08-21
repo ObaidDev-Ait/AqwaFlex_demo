@@ -1,5 +1,78 @@
 import Link from "next/link";
 import Image from "next/image";
+import CategoryTile from "@/components/ui/CategoryTile";
+import FeatureCard from "@/components/ui/FeatureCard";
+import HighlightProductCard from "@/components/ui/HighlightProductCard";
+import MaterialIcon from "@/components/ui/MaterialIcon";
+import SectionHeading from "@/components/ui/SectionHeading";
+import { CONTACT, whatsAppUrl } from "@/lib/contact";
+
+const FEATURES = [
+  {
+    icon: "factory",
+    title: "Fabrication Marocaine",
+    description:
+      "Une expertise locale alliant artisanat traditionnel et technologies de pointe pour une qualité sans compromis.",
+  },
+  {
+    icon: "verified",
+    title: "Qualité Premium",
+    description:
+      "Mousses certifiées et matériaux de premier choix rigoureusement sélectionnés pour votre bien-être durable.",
+  },
+  {
+    icon: "local_shipping",
+    title: "Livraison Nationale",
+    description:
+      "Un service logistique dédié partout au Maroc, garantissant une livraison rapide et une installation soignée.",
+  },
+];
+
+const SECONDARY_CATEGORIES = [
+  {
+    title: "MOUSSES",
+    subtitle: "Technologie & Densité",
+    imageAlt: "Mousses Aquaflex",
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuDnebScj-mTUFFg5Vi-7CSteDovfedMP2BhUY_6ZLJJAtdCCOmaLGa8c1opXEjuzuSFflNrV9V2qvoKMU5jEraecvAxsWQW6CNa7kux1DXlrqrFxz5MRWMWhQhp8QZNKXuC20qYjpGYEK6OHwZX_43zOXCxxed5NeL1Ogk8JfQHZd3lYhZsfxeBhBVZ8BQ07cAW0NFhcXbUCkFGhJBpMuVnBo3dT1tr98-2EWwRKC_IWMFLaDv0UAO9ypLJJLw1fUD7XPf7oVkZFt97",
+  },
+  {
+    title: "SALON MOUSSE",
+    subtitle: "Design Sur Mesure",
+    imageAlt: "Salon Mousse Aquaflex",
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuBmUbklbXDqGjMw_IaTJwNTAX130eJQs88z7rlDFBV0QZNbMu7Wi6aSG5ZAiFUFK0ishTwkEkOArG9jduNh3mnJiyQzPoPmiNZEnv8WWU2-VAUgyDEXFrDfyn_c8hroxLvdfrqO4fqVb89WUeciMxlMMkY85jJz5oNBKLLXz-43xu_37481YIbNc1NrGpTJWCV1KXUmdAHSEufMsnLb_ZLGP5zRM4DXZtiRSzxCio7s7VDBj42SnSWXnsV5KWH6tTesDI1st1TaMA48",
+  },
+];
+
+const FEATURED_PRODUCTS = [
+  {
+    name: "Relax",
+    badge: "Bestseller",
+    href: "/products/relax",
+    description:
+      "Mousse haute résilience pour un accueil enveloppant et un soutien équilibré.",
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCqkCHNSgTm1MW7KipvGG32E0OX3KLlLz6rMwO3EvZ2i5w3CIOMEa9cSUMXpWp8tANaUyc1t9TnmPJhtoQ0Z5iKYoIolC3PhMNr9_Mlml6qG9SlvM5Uw9TsDFT6w4abX-mmPpO1fWr4yqB4h4uDFE3Zq-Y3b0bbm74ncTChTxg8BRpRPwnyd5RGjhOvUfMQKCLcfDZ5Qg_ytKKltcILytU4yVqbeRZ0XZvq0N3t8Z_5GoLdvd8mLfBIilCAaODAzh9KKDWGuSIFO5UI",
+  },
+  {
+    name: "Prestige",
+    badge: "Luxe",
+    href: "/products/prestige",
+    description:
+      "Technologie hybride combinant ressorts ensachés et mousse à mémoire de forme.",
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ik6nym5Oow6wntBCPFtMb6xIS8gLTgLLBgBnA8omKV14_RfAPa0DLFRil0xYCo87gVWeod59HaiwoAxvXsuWR2JP-VI6ml3AtaQUEQYN0umvbzrvNLDOL7PM-sgLXkrbyzvrkTIlN7ELNpEUBp7HxDIZAOjComSPUgI4DAcOq0my57S7LqzjneOBdrLuat9XRbi-1MStM4Bb0ywZTVwnbkhlgt-KtsRYlueIc0wAeqZKGkY6ZuI2HKhyUMlqfnXsrpoC2R_z9kMj",
+  },
+  {
+    name: "Orthopédique",
+    badge: "Sante",
+    href: "/products/ortho",
+    description: "Fermeté optimale pour un alignement parfait de la colonne vertébrale.",
+    imageSrc:
+      "https://lh3.googleusercontent.com/aida-public/AB6AXuCxOmg6x2YJ4QmZMgux72oogTay8WkTWXduyV0RujGK0p57G4Y5PD_1OR8nOMDwvJXISZx8IOeBYqMGsyINS5BwX3FIuuiRCqwUr_aVDbOLh8GvwvCW9m43DZOQMd-GT-epUpRnNALNWne4FhoCqa92CESSPCXUXQvxSfr76jKXMAoSCloIPtyQMvsWBISHuCuKqLnqHrBYOBmkjkZXdb0sZSQ9ZB9e6_zDXxfnMSOMYGbOlY--xb3s9BhVrvZxQm-J2BUEhidRxLNC",
+  },
+];
 
 export default function Home() {
   return (
@@ -35,12 +108,10 @@ export default function Home() {
                 Voir le catalogue
               </Link>
               <a
-                href="https://wa.me/212661361250"
+                href={whatsAppUrl()}
                 className="hidden md:flex glass-panel text-surface-bright w-[85%] md:w-auto h-14 items-center justify-center px-10 rounded-full font-technical-sm tracking-widest uppercase hover:bg-surface/20 transition-all gap-3"
               >
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
-                  chat
-                </span>
+                <MaterialIcon name="chat" filled />
                 WhatsApp Devis
               </a>
             </div>
@@ -50,95 +121,42 @@ export default function Home() {
 
       {/* Features Section: Glassmorphism */}
       <section className="py-section-gap px-margin-desktop max-w-[1440px] mx-auto relative order-4 md:order-2">
-        <div className="text-center mb-20">
-          <span className="font-technical-sm text-technical-sm tracking-widest uppercase text-on-tertiary-container mb-4 block">
-            Excellence &amp; Tradition
-          </span>
-          <h2 className="font-headline-xl text-headline-xl text-primary">Pourquoi choisir Aquaflex</h2>
-        </div>
+        <SectionHeading
+          eyebrow="Excellence & Tradition"
+          title="Pourquoi choisir Aquaflex"
+          className="text-center mb-20"
+        />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter">
-          <div className="glass-panel p-10 rounded-[24px] hover-lift group border border-primary/10">
-            <div className="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <span className="material-symbols-outlined text-3xl">factory</span>
-            </div>
-            <h3 className="font-headline-lg text-headline-lg text-primary mb-4">Fabrication Marocaine</h3>
-            <p className="text-on-surface-variant font-body-md">
-              Une expertise locale alliant artisanat traditionnel et technologies de pointe pour une qualité sans compromis.
-            </p>
-          </div>
-          <div className="glass-panel p-10 rounded-[24px] hover-lift group border border-primary/10">
-            <div className="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <span className="material-symbols-outlined text-3xl">verified</span>
-            </div>
-            <h3 className="font-headline-lg text-headline-lg text-primary mb-4">Qualité Premium</h3>
-            <p className="text-on-surface-variant font-body-md">
-              Mousses certifiées et matériaux de premier choix rigoureusement sélectionnés pour votre bien-être durable.
-            </p>
-          </div>
-          <div className="glass-panel p-10 rounded-[24px] hover-lift group border border-primary/10">
-            <div className="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-8 group-hover:scale-110 transition-transform">
-              <span className="material-symbols-outlined text-3xl">local_shipping</span>
-            </div>
-            <h3 className="font-headline-lg text-headline-lg text-primary mb-4">Livraison Nationale</h3>
-            <p className="text-on-surface-variant font-body-md">
-              Un service logistique dédié partout au Maroc, garantissant une livraison rapide et une installation soignée.
-            </p>
-          </div>
+          {FEATURES.map((feature) => (
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
         </div>
       </section>
 
       {/* Categories Section: Asymmetric Image Blocks */}
       <section className="pb-section-gap order-3">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-gutter px-margin-desktop max-w-[1440px] mx-auto h-auto md:h-[700px] gap-y-6">
-          <Link href="/products" className="min-h-[250px] md:col-span-7 relative group overflow-hidden rounded-[24px] cursor-pointer block">
-            <Image
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2v3XCmac9gn0TeSeO3kjPLRGSv_rZfsxr3hAT9w_nUWfOABME72xyDD2fmQ3yq-_WiCNVdLCenFcHIiVABtXENvg-39BUlTYKjJAmtj8Cul-QUuJopU5YlDnqz7XoV_cc07OjuMdgjXozVarPeZuCEXDkn1M9ekFX-3LDQtR259sT_B0f9Qg8zZFMHClN4RchoS5sAmA5IdGoGh_yOlBpDgH1a6SokY9I3toJrDLdlb83OKvEnc67PCERZz1yMdbd1n5vC4TyyadC"
-              alt="Matelas Aquaflex"
-              fill
-              loading="lazy"
-              quality={85}
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-              sizes="(max-width: 768px) 100vw, 58vw"
-            />
-            <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-            <div className="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-surface-bright z-20">
-              <h2 className="font-headline-xl text-headline-xl mb-2">MATELAS</h2>
-              <p className="font-technical-sm tracking-widest uppercase opacity-80">Collection Sommeil Profond</p>
-            </div>
-          </Link>
+          <CategoryTile
+            href="/products"
+            imageSrc="https://lh3.googleusercontent.com/aida-public/AB6AXuB2v3XCmac9gn0TeSeO3kjPLRGSv_rZfsxr3hAT9w_nUWfOABME72xyDD2fmQ3yq-_WiCNVdLCenFcHIiVABtXENvg-39BUlTYKjJAmtj8Cul-QUuJopU5YlDnqz7XoV_cc07OjuMdgjXozVarPeZuCEXDkn1M9ekFX-3LDQtR259sT_B0f9Qg8zZFMHClN4RchoS5sAmA5IdGoGh_yOlBpDgH1a6SokY9I3toJrDLdlb83OKvEnc67PCERZz1yMdbd1n5vC4TyyadC"
+            imageAlt="Matelas Aquaflex"
+            title="MATELAS"
+            subtitle="Collection Sommeil Profond"
+            sizes="(max-width: 768px) 100vw, 58vw"
+            className="min-h-[250px] md:col-span-7"
+            titleClassName="font-headline-xl text-headline-xl mb-2"
+            captionClassName="absolute bottom-6 left-6 md:bottom-10 md:left-10 text-surface-bright z-20"
+          />
           <div className="md:col-span-5 flex flex-col gap-gutter gap-y-6">
-            <Link href="/products" className="min-h-[180px] md:flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
-              <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDnebScj-mTUFFg5Vi-7CSteDovfedMP2BhUY_6ZLJJAtdCCOmaLGa8c1opXEjuzuSFflNrV9V2qvoKMU5jEraecvAxsWQW6CNa7kux1DXlrqrFxz5MRWMWhQhp8QZNKXuC20qYjpGYEK6OHwZX_43zOXCxxed5NeL1Ogk8JfQHZd3lYhZsfxeBhBVZ8BQ07cAW0NFhcXbUCkFGhJBpMuVnBo3dT1tr98-2EWwRKC_IWMFLaDv0UAO9ypLJJLw1fUD7XPf7oVkZFt97"
-                alt="Mousses Aquaflex"
-                fill
-                loading="lazy"
-                quality={85}
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
+            {SECONDARY_CATEGORIES.map((category) => (
+              <CategoryTile
+                key={category.title}
+                href="/products"
                 sizes="(max-width: 768px) 100vw, 42vw"
+                className="min-h-[180px] md:flex-1"
+                {...category}
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-              <div className="absolute bottom-6 left-6 text-surface-bright z-20">
-                <h2 className="font-headline-lg text-headline-lg mb-1">MOUSSES</h2>
-                <p className="font-technical-sm tracking-widest uppercase opacity-80">Technologie &amp; Densité</p>
-              </div>
-            </Link>
-            <Link href="/products" className="min-h-[180px] md:flex-1 relative group overflow-hidden rounded-[24px] cursor-pointer block">
-              <Image
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmUbklbXDqGjMw_IaTJwNTAX130eJQs88z7rlDFBV0QZNbMu7Wi6aSG5ZAiFUFK0ishTwkEkOArG9jduNh3mnJiyQzPoPmiNZEnv8WWU2-VAUgyDEXFrDfyn_c8hroxLvdfrqO4fqVb89WUeciMxlMMkY85jJz5oNBKLLXz-43xu_37481YIbNc1NrGpTJWCV1KXUmdAHSEufMsnLb_ZLGP5zRM4DXZtiRSzxCio7s7VDBj42SnSWXnsV5KWH6tTesDI1st1TaMA48"
-                alt="Salon Mousse Aquaflex"
-                fill
-                loading="lazy"
-                quality={85}
-                className="object-cover transition-transform duration-700 group-hover:scale-105"
-                sizes="(max-width: 768px) 100vw, 42vw"
-              />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors z-10"></div>
-              <div className="absolute bottom-6 left-6 text-surface-bright z-20">
-                <h2 className="font-headline-lg text-headline-lg mb-1">SALON MOUSSE</h2>
-                <p className="font-technical-sm tracking-widest uppercase opacity-80">Design Sur Mesure</p>
-              </div>
-            </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -147,89 +165,15 @@ export default function Home() {
       <section className="py-section-gap bg-surface order-2 md:order-4" id="catalogue">
         <div className="px-margin-desktop max-w-[1440px] mx-auto">
           <div className="flex justify-between items-end mb-16">
-            <div>
-              <span className="font-technical-sm text-technical-sm tracking-widest uppercase text-on-tertiary-container mb-4 block">
-                Collection 2026
-              </span>
-              <h2 className="font-headline-xl text-headline-xl text-primary">Modèles Signatures</h2>
-            </div>
+            <SectionHeading eyebrow="Collection 2026" title="Modèles Signatures" />
             <Link href="/products" className="text-primary font-technical-sm tracking-widest border-b border-primary hover:opacity-70 pb-1">
               TOUT VOIR
             </Link>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-gutter gap-y-12">
-            {/* Product Card 1 */}
-            <div className="group">
-              <div className="aspect-[4/5] bg-surface-container relative rounded-[24px] overflow-hidden mb-8 premium-shadow">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqkCHNSgTm1MW7KipvGG32E0OX3KLlLz6rMwO3EvZ2i5w3CIOMEa9cSUMXpWp8tANaUyc1t9TnmPJhtoQ0Z5iKYoIolC3PhMNr9_Mlml6qG9SlvM5Uw9TsDFT6w4abX-mmPpO1fWr4yqB4h4uDFE3Zq-Y3b0bbm74ncTChTxg8BRpRPwnyd5RGjhOvUfMQKCLcfDZ5Qg_ytKKltcILytU4yVqbeRZ0XZvq0N3t8Z_5GoLdvd8mLfBIilCAaODAzh9KKDWGuSIFO5UI"
-                  alt="Relax"
-                  fill
-                  loading="lazy"
-                  quality={85}
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full font-technical-sm text-primary uppercase">
-                  Bestseller
-                </div>
-              </div>
-              <h3 className="font-headline-lg text-headline-lg text-primary mb-2">Relax</h3>
-              <p className="text-on-surface-variant font-body-md mb-6">
-                Mousse haute résilience pour un accueil enveloppant et un soutien équilibré.
-              </p>
-              <Link href="/products/relax" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
-                Découvrir
-              </Link>
-            </div>
-            {/* Product Card 2 */}
-            <div className="group">
-              <div className="aspect-[4/5] bg-surface-container relative rounded-[24px] overflow-hidden mb-8 premium-shadow">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ik6nym5Oow6wntBCPFtMb6xIS8gLTgLLBgBnA8omKV14_RfAPa0DLFRil0xYCo87gVWeod59HaiwoAxvXsuWR2JP-VI6ml3AtaQUEQYN0umvbzrvNLDOL7PM-sgLXkrbyzvrkTIlN7ELNpEUBp7HxDIZAOjComSPUgI4DAcOq0my57S7LqzjneOBdrLuat9XRbi-1MStM4Bb0ywZTVwnbkhlgt-KtsRYlueIc0wAeqZKGkY6ZuI2HKhyUMlqfnXsrpoC2R_z9kMj"
-                  alt="Prestige"
-                  fill
-                  loading="lazy"
-                  quality={85}
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full font-technical-sm text-primary uppercase">
-                  Luxe
-                </div>
-              </div>
-              <h3 className="font-headline-lg text-headline-lg text-primary mb-2">Prestige</h3>
-              <p className="text-on-surface-variant font-body-md mb-6">
-                Technologie hybride combinant ressorts ensachés et mousse à mémoire de forme.
-              </p>
-              <Link href="/products/prestige" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
-                Découvrir
-              </Link>
-            </div>
-            {/* Product Card 3 */}
-            <div className="group">
-              <div className="aspect-[4/5] bg-surface-container relative rounded-[24px] overflow-hidden mb-8 premium-shadow">
-                <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCxOmg6x2YJ4QmZMgux72oogTay8WkTWXduyV0RujGK0p57G4Y5PD_1OR8nOMDwvJXISZx8IOeBYqMGsyINS5BwX3FIuuiRCqwUr_aVDbOLh8GvwvCW9m43DZOQMd-GT-epUpRnNALNWne4FhoCqa92CESSPCXUXQvxSfr76jKXMAoSCloIPtyQMvsWBISHuCuKqLnqHrBYOBmkjkZXdb0sZSQ9ZB9e6_zDXxfnMSOMYGbOlY--xb3s9BhVrvZxQm-J2BUEhidRxLNC"
-                  alt="Orthopédique"
-                  fill
-                  loading="lazy"
-                  quality={85}
-                  className="object-cover transition-transform duration-700 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-                <div className="absolute top-6 left-6 glass-panel px-4 py-2 rounded-full font-technical-sm text-primary uppercase">
-                  Sante
-                </div>
-              </div>
-              <h3 className="font-headline-lg text-headline-lg text-primary mb-2">Orthopédique</h3>
-              <p className="text-on-surface-variant font-body-md mb-6">
-                Fermeté optimale pour un alignement parfait de la colonne vertébrale.
-              </p>
-              <Link href="/products/ortho" className="block text-center w-full py-4 rounded-full border border-primary text-primary font-technical-sm tracking-widest hover:bg-primary hover:text-on-primary transition-all uppercase">
-                Découvrir
-              </Link>
-            </div>
+            {FEATURED_PRODUCTS.map((product) => (
+              <HighlightProductCard key={product.name} {...product} />
+            ))}
           </div>
         </div>
       </section>
@@ -250,11 +194,11 @@ export default function Home() {
                 Demander mon devis
               </Link>
               <a
-                href="tel:+212522765353"
+                href={CONTACT.phone.sales.href}
                 className="border border-on-primary/30 text-on-primary px-12 py-5 rounded-full font-headline-lg text-lg hover:bg-on-primary/10 transition-all flex items-center justify-center gap-3"
               >
-                <span className="material-symbols-outlined">call</span>
-                05 22 76 53 53
+                <MaterialIcon name="call" />
+                {CONTACT.phone.sales.display}
               </a>
             </div>
           </div>
