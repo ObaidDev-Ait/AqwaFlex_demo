@@ -1,4 +1,13 @@
 import Image from "next/image";
+import ContactInfoItem from "@/components/ui/ContactInfoItem";
+import FormField from "@/components/ui/FormField";
+import MaterialIcon from "@/components/ui/MaterialIcon";
+import { CONTACT } from "@/lib/contact";
+
+const TRUST_BADGES = [
+  { icon: "verified", label: "Garantie 10 Ans" },
+  { icon: "eco", label: "Éco-Responsable" },
+];
 
 export default function Contact() {
   return (
@@ -8,7 +17,7 @@ export default function Contact() {
         <div className="relative z-10 max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
           <div className="max-w-3xl">
             <h1 className="font-headline-xl text-headline-xl text-primary mb-6">
-              Contactez l'Excellence du Sommeil
+              Contactez l&apos;Excellence du Sommeil
             </h1>
             <p className="font-body-lg text-body-lg text-on-surface-variant mb-8">
               Experts en confort nouvelle génération, nous sommes à votre disposition pour
@@ -28,51 +37,34 @@ export default function Contact() {
                 Nos Coordonnées
               </h2>
               <div className="space-y-8">
-                {/* WhatsApp */}
-                <div className="flex items-start gap-5 group cursor-pointer">
-                  <div className="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center text-on-primary-container group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>
-                      chat
-                    </span>
-                  </div>
-                  <div>
-                    <p className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container mb-1">
-                      WhatsApp Business
-                    </p>
-                    <p className="font-body-lg text-body-lg text-primary font-bold">
-                      +212 5 22 00 00 00
-                    </p>
-                  </div>
-                </div>
-                {/* Téléphone */}
-                <div className="flex items-start gap-5 group cursor-pointer">
-                  <div className="w-14 h-14 rounded-full bg-secondary-fixed flex items-center justify-center text-on-secondary-container group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined">call</span>
-                  </div>
-                  <div>
-                    <p className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container mb-1">
-                      Service Client
-                    </p>
-                    <p className="font-body-lg text-body-lg text-primary font-bold">
-                      +212 6 61 00 00 00
-                    </p>
-                  </div>
-                </div>
-                {/* Adresse */}
-                <div className="flex items-start gap-5 group">
-                  <div className="w-14 h-14 rounded-full bg-surface-container-highest flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
-                    <span className="material-symbols-outlined">location_on</span>
-                  </div>
-                  <div>
-                    <p className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container mb-1">
-                      Siège &amp; Showroom
-                    </p>
-                    <p className="font-body-lg text-body-lg text-on-surface-variant">
-                      Zone Industrielle Sapino, Nouaceur,<br />
-                      Casablanca, Maroc
-                    </p>
-                  </div>
-                </div>
+                <ContactInfoItem
+                  icon="chat"
+                  iconFilled
+                  iconClassName="bg-primary-container text-on-primary-container"
+                  label="WhatsApp Business"
+                  value={CONTACT.phone.landline.display}
+                  className="cursor-pointer"
+                />
+                <ContactInfoItem
+                  icon="call"
+                  iconClassName="bg-secondary-fixed text-on-secondary-container"
+                  label="Service Client"
+                  value={CONTACT.phone.mobile.display}
+                  className="cursor-pointer"
+                />
+                <ContactInfoItem
+                  icon="location_on"
+                  iconClassName="bg-surface-container-highest text-primary"
+                  label="Siège & Showroom"
+                  value={
+                    <>
+                      {CONTACT.address[0]}
+                      <br />
+                      {CONTACT.address[1]}
+                    </>
+                  }
+                  valueClassName="font-body-lg text-body-lg text-on-surface-variant"
+                />
               </div>
             </div>
             {/* Map Placeholder */}
@@ -86,7 +78,7 @@ export default function Contact() {
                 sizes="(max-width: 768px) 100vw, 42vw"
               />
               <div className="absolute bottom-6 left-6 z-20 bg-white/60 backdrop-blur-[20px] border border-white/30 px-4 py-2 rounded-full flex items-center gap-2">
-                <span className="material-symbols-outlined text-primary text-sm">directions</span>
+                <MaterialIcon name="directions" className="text-primary text-sm" />
                 <span className="font-technical-sm text-technical-sm text-primary">
                   ITINÉRAIRE
                 </span>
@@ -106,81 +98,47 @@ export default function Contact() {
               </div>
               <form className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container ml-1">
-                      Nom Complet
-                    </label>
-                    <input
-                      className="w-full bg-surface-bright border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 text-body-md transition-all"
-                      placeholder="Ex: Jean Dupont"
-                      type="text"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container ml-1">
-                      Téléphone
-                    </label>
-                    <input
-                      className="w-full bg-surface-bright border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 text-body-md transition-all"
-                      placeholder="+212 ..."
-                      type="tel"
-                    />
-                  </div>
+                  <FormField label="Nom Complet" placeholder="Ex: Jean Dupont" />
+                  <FormField label="Téléphone" type="tel" placeholder="+212 ..." />
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div className="space-y-2">
-                    <label className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container ml-1">
-                      Ville
-                    </label>
-                    <input
-                      className="w-full bg-surface-bright border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 text-body-md transition-all"
-                      placeholder="Ex: Casablanca"
-                      type="text"
-                    />
-                  </div>
-                  <div className="space-y-2">
-                    <label className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container ml-1">
-                      Produit Souhaité
-                    </label>
-                    <select className="w-full bg-surface-bright border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 text-body-md appearance-none transition-all">
-                      <option>Matelas Premium</option>
-                      <option>Mousse sur mesure</option>
-                      <option>Salon Complet</option>
-                      <option>Autre Accessoire</option>
-                    </select>
-                  </div>
+                  <FormField label="Ville" placeholder="Ex: Casablanca" />
+                  <FormField
+                    label="Produit Souhaité"
+                    as="select"
+                    options={[
+                      "Matelas Premium",
+                      "Mousse sur mesure",
+                      "Salon Complet",
+                      "Autre Accessoire",
+                    ]}
+                  />
                 </div>
-                <div className="space-y-2">
-                  <label className="font-technical-sm text-technical-sm uppercase text-on-tertiary-container ml-1">
-                    Votre Message
-                  </label>
-                  <textarea
-                    className="w-full bg-surface-bright border-0 border-b border-outline-variant focus:border-primary focus:ring-0 px-4 py-3 text-body-md transition-all"
-                    placeholder="Décrivez vos besoins ou dimensions spécifiques..."
-                    rows={4}
-                  ></textarea>
-                </div>
+                <FormField
+                  label="Votre Message"
+                  as="textarea"
+                  rows={4}
+                  placeholder="Décrivez vos besoins ou dimensions spécifiques..."
+                />
                 <div className="pt-6">
                   <button
                     className="w-full py-5 bg-primary text-on-primary rounded-full font-technical-sm text-technical-sm tracking-widest uppercase hover:bg-primary-container transition-all shadow-lg hover:shadow-primary/20 flex items-center justify-center gap-3"
                     type="button"
                   >
                     <span>Recevoir mon devis</span>
-                    <span className="material-symbols-outlined text-sm">arrow_forward</span>
+                    <MaterialIcon name="arrow_forward" className="text-sm" />
                   </button>
                 </div>
               </form>
             </div>
             {/* Trust Badge */}
             <div className="mt-8 flex items-center justify-center gap-8 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined">verified</span>
-                <span className="font-technical-sm text-technical-sm uppercase">Garantie 10 Ans</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="material-symbols-outlined">eco</span>
-                <span className="font-technical-sm text-technical-sm uppercase">Éco-Responsable</span>
-              </div>
+              {TRUST_BADGES.map((badge) => (
+                <div key={badge.label} className="flex items-center gap-2">
+                  <MaterialIcon name={badge.icon} />
+                  <span className="font-technical-sm text-technical-sm uppercase">{badge.label}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>
